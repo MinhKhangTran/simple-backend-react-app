@@ -1,0 +1,30 @@
+const App = () => {
+  const [movie, setMovie] = React.useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(movie);
+  };
+  return (
+    <div className="bg-indigo-100 h-full w-full grid place-items-center">
+      <div>
+        <form onSubmit={handleSubmit} className="flex space-x-2">
+          <input
+            className="text-xl rounded"
+            placeholder="Suche ein Film"
+            type="text"
+            value={movie}
+            onChange={(e) => {
+              setMovie(e.target.value);
+            }}
+          ></input>
+          <button
+            type="submit"
+            className="px-2 py-1 bg-indigo-600 text-indigo-200 font-semibold text-xl rounded"
+          >
+            Suche
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
